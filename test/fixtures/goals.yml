@@ -1,13 +1,15 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  goal: MyString
+  goal: Goal for user one
   details: MyText
   date: 2025-06-01 19:33:23
   accomplished: false
+  user: one
 
 two:
-  goal: MyString
+  goal: Goal for user two
   details: MyText
   date: 2025-06-01 19:33:23
   accomplished: false
+  user: two

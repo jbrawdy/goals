@@ -9,4 +9,9 @@ class ApplicationController < ActionController::Base
 
     # @user_email = Current.user.email_address
   end
+
+ def after_authentication_url
+   goals_path
+ end
+
 end

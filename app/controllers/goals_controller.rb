@@ -3,7 +3,7 @@ class GoalsController < ApplicationController
 
   # GET /goals or /goals.json
   def index
-    @goals = Goal.all
+    @goals = Current.user.goals
   end
 
   # GET /goals/1 or /goals/1.json
