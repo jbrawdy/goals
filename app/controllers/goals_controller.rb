@@ -67,4 +67,6 @@ class GoalsController < ApplicationController
     def goal_params
       params.expect(goal: [ :goal, :details, :date, :accomplished ])
     end
+
+
 end
