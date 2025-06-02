@@ -1,0 +1,5 @@
+<p><%= link_to "Home", root_path %></p>
+<p><%= link_to "Goals", goals_path %></p>
+
+<%= link_to "Login", new_session_path unless authenticated? %>
+<%= button_to "Log Out", session_path, method: :delete if authenticated? %>
