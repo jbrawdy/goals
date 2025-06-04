@@ -8,6 +8,7 @@ class GoalsController < ApplicationController
 
   # GET /goals/1 or /goals/1.json
   def show
+    @goal = Current.user.goals.find(params[:id])
   end
 
   # GET /goals/new
@@ -17,11 +18,14 @@ class GoalsController < ApplicationController
 
   # GET /goals/1/edit
   def edit
+    @goal = Current.user.goals.find(params[:id])
   end
 
   # POST /goals or /goals.json
   def create
-    @goal = Goal.new(goal_params)
+    # @goal = Goal.new(goal_params)
+
+    @goal = Current.user.goals.new(goal_params)
 
     respond_to do |format|
       if @goal.save
@@ -36,6 +40,9 @@ class GoalsController < ApplicationController
 
   # PATCH/PUT /goals/1 or /goals/1.json
   def update
+
+    @goal = Current.user.goals.find(params[:id])
+
     respond_to do |format|
       if @goal.update(goal_params)
         format.html { redirect_to @goal, notice: "Goal was successfully updated." }
@@ -49,6 +56,8 @@ class GoalsController < ApplicationController
 
   # DELETE /goals/1 or /goals/1.json
   def destroy
+    @goal = Current.user.goals.find(params[:id])
+
     @goal.destroy!
 
     respond_to do |format|
